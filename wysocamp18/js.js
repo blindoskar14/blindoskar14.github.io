@@ -1,5 +1,7 @@
 btn = document.getElementById('btn')
 btn2 = document.getElementById('btn2')
+hint = document.getElementById('hint')
+hintPrefix = "You got "
 
 akm = document.getElementById('akm')
 uzi = document.getElementById('uzi')
@@ -53,6 +55,7 @@ function showGun(id) {
     }
     if (guns[id] != null) {
         guns[id].style.display = 'block'
+        hint.innerText = hintPrefix + guns[id].id
     }
 }
 
@@ -63,6 +66,7 @@ function showArmor(id) {
     }
     if (armors[id] != null) {
         armors[id].style.display = 'block'
+        hint.innerText = hintPrefix + armors[id].id
     }
 }
 
