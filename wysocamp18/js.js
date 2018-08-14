@@ -1,4 +1,6 @@
 btn = document.getElementById('btn')
+btn2 = document.getElementById('btn2')
+
 akm = document.getElementById('akm')
 uzi = document.getElementById('uzi')
 awm = document.getElementById('awm')
@@ -20,29 +22,34 @@ hamlet.prob = 20
 
 
 btn.onclick = function () {
-    animate(400, function () {
-        animate(300, function () {
-            animate(200, function () {
-                animate(180, function () {
-                    animate(170, function () {
-                        animate(160, function () {
-                            animate(150, function () {
-                                animate(140, function () {
-                                    randGun()
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
+    // animate(400, function () {
+    //     animate(300, function () {
+    //         animate(200, function () {
+    //             animate(180, function () {
+    //                 animate(170, function () {
+    //                     animate(160, function () {
+    //                         animate(150, function () {
+    //                             animate(140, function () {
+    //                                 randGun()
+    //                             })
+    //                         })
+    //                     })
+    //                 })
+    //             })
+    //         })
+    //     })
+    // })
+    showGun(randGun())
+}
+
+btn2.onclick = function(){
+    showArmor(randArmor())
 }
 
 function showGun(id) {
-    let len = guns.length
+    let len = all.length
     for (let i = 0; i < len; i++) {
-        guns[i].style.display = 'none'
+        all[i].style.display = 'none'
     }
     if (guns[id] != null) {
         guns[id].style.display = 'block'
@@ -50,9 +57,9 @@ function showGun(id) {
 }
 
 function showArmor(id) {
-    let len = armors.length
+    let len = all.length
     for (let i = 0; i < len; i++) {
-        armors[i].style.display = 'none'
+        all[i].style.display = 'none'
     }
     if (armors[id] != null) {
         armors[id].style.display = 'block'
