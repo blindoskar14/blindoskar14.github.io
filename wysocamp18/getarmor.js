@@ -10,45 +10,39 @@ armors = [armor, hamlet]
 armor.prob = 10
 hamlet.prob = 20
 
-getArmour.onmousedown = function(){
-    intbox.style = "box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"
-}
-
-getArmour.onmouseup = function(){
-    intbox.style = "box-shadow:0;"
-}
-
 getArmour.onclick = function () {
     getArmour.style.display = 'none'
-    // animate(400, function () {
-    //     animate(300, function () {
-    //         animate(200, function () {
-    //             animate(180, function () {
-    //                 animate(170, function () {
-    //                     animate(160, function () {
-    //                         animate(150, function () {
-    //                             animate(140, function () {
-    //                                 randGun()
-    //                             })
-    //                         })
-    //                     })
-    //                 })
-    //             })
-    //         })
-    //     })
-    // })
-    showArmor(randArmor())
+    showArmor(randArmor(), true)
 }
 
-function showArmor(id) {
+function showArmor(id, result) {
     let len = armors.length
     for (let i = 0; i < len; i++) {
         armors[i].style.display = 'none'
     }
     if (armors[id] != null) {
         armors[id].style.display = 'block'
-        hint.innerText = hintPrefix + armors[id].id
+        if (result) {
+            showResult(armors[id])
+        }
     }
+}
+
+function showResult(it) {
+    it.style.display = 'none'
+    setTimeout(function () {
+        it.style.display = 'block'
+        hint.innerText = hintPrefix + it.id
+        setTimeout(function () {
+            it.style.display = 'none'
+            setTimeout(function () {
+                it.style.display = 'block'
+                setTimeout(function () {
+
+                }, 200)
+            }, 200)
+        }, 200)
+    }, 500)
 }
 
 function animate(interval, cb) {
@@ -63,6 +57,7 @@ function animate(interval, cb) {
         }, interval)
     }, interval)
 }
+
 function randArmor() {
     let rand = Math.random() * armorsProb
     for (let i = 0; i < armors.length; i++) {

@@ -2,8 +2,6 @@ intbox = document.getElementsByClassName('int-box')[0]
 getGun = document.getElementById('getGun')
 hint = document.getElementById('hint')
 hintPrefix = "You got "
-hint.innerText = "#12"
-
 akm = document.getElementById('akm')
 uzi = document.getElementById('uzi')
 awm = document.getElementById('awm')
@@ -51,18 +49,17 @@ function showGun(id, result = false) {
     }
 }
 
-function showResult(it){
+function showResult(it) {
     it.style.display = 'none'
-    setTimeout(function (){
+    setTimeout(function () {
         it.style.display = 'block'
         hint.innerText = hintPrefix + it.id
-        console.log("test is " + hint.innerText)
-        setTimeout(function (){
+        setTimeout(function () {
             it.style.display = 'none'
-            setTimeout(function (){
+            setTimeout(function () {
                 it.style.display = 'block'
-                setTimeout(function (){
-                    
+                setTimeout(function () {
+
                 }, 200)
             }, 200)
         }, 200)
