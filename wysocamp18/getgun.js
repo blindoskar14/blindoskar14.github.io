@@ -16,15 +16,12 @@ awm.prob = 0
 s1897.prob = 25
 m416.prob = 35
 
-getGun.onmousedown = function () {
-    intbox.style = "box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.3), 0 10px 20px 0 rgba(255, 255, 255, 0.3);"
+
+getGun.onmouseover = getGun.onmousemove = function () {
+    intbox.style = "box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);-webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);"
 }
 
-getGun.onmouseover = function () {
-    intbox.style = "box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1), 0 10px 20px 0 rgba(255, 255, 255, 0.1);"
-}
-
-getGun.onmouseup = getGun.onmouseout = function () {
+getGun.onmouseout = function () {
     intbox.style = "box-shadow:0;"
 }
 
