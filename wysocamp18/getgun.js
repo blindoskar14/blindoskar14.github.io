@@ -17,11 +17,11 @@ s1897.prob = 25
 m416.prob = 35
 
 
-getGun.onmouseover = getGun.onmousemove = function () {
+getGun.onmouseover = getGun.onmousedown = function () {
     intbox.style = "box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);-webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.5);"
 }
 
-getGun.onmouseout = function () {
+getGun.onmouseup = getGun.onmouseout = function () {
     intbox.style = "box-shadow:0;"
 }
 
