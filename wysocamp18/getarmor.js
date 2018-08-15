@@ -32,14 +32,11 @@ function showResult(it) {
     it.style.display = 'none'
     setTimeout(function () {
         it.style.display = 'block'
-        hint.innerText = hintPrefix + it.id
+        hint.innerText = hintPrefix + it.id.toUpperCase()
         setTimeout(function () {
             it.style.display = 'none'
             setTimeout(function () {
                 it.style.display = 'block'
-                setTimeout(function () {
-
-                }, 200)
             }, 200)
         }, 200)
     }, 500)
