@@ -17,32 +17,36 @@ s1897.prob = 25
 m416.prob = 35
 
 getGun.onmousedown = function () {
-    intbox.style = "box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"
+    intbox.style = "box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.3), 0 10px 20px 0 rgba(255, 255, 255, 0.3);"
 }
 
-getGun.onmouseup = function () {
+getGun.onmouseover = function () {
+    intbox.style = "box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1), 0 10px 20px 0 rgba(255, 255, 255, 0.1);"
+}
+
+getGun.onmouseup = getGun.onmouseout = function () {
     intbox.style = "box-shadow:0;"
 }
 
 getGun.onclick = function () {
-    getGun.style.display = 'none'
-    animate(400, function () {
-        animate(300, function () {
-            animate(200, function () {
-                animate(180, function () {
-                    animate(170, function () {
-                        animate(160, function () {
-                            animate(150, function () {
-                                animate(140, function () {
-                                    showGun(randGun(), true)
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
+    // getGun.style.display = 'none'
+    // animate(400, function () {
+    //     animate(300, function () {
+    //         animate(200, function () {
+    //             animate(180, function () {
+    //                 animate(170, function () {
+    //                     animate(160, function () {
+    //                         animate(150, function () {
+    //                             animate(140, function () {
+    //                                 showGun(randGun(), true)
+    //                             })
+    //                         })
+    //                     })
+    //                 })
+    //             })
+    //         })
+    //     })
+    // })
 }
 
 function showGun(id, result = false) {
