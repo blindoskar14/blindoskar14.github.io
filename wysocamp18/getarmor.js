@@ -7,8 +7,11 @@ armor = document.getElementById('armor')
 hamlet = document.getElementById('hamlet')
 armors = [armor, hamlet]
 
-armor.prob = 10
-hamlet.prob = 20
+armor.prob = 30
+hamlet.prob = 70
+
+hamlet.info = "You got 頭盔 Hamlet!\n\n傷害減免：10%\n\nDamage Reduction: 10%"
+armor.info = "You got 護甲 Armor!\n\n傷害減免：20%\n\nDamage Reduction: 20%"
 
 getArmour.onclick = function () {
     getArmour.style.display = 'none'
@@ -32,7 +35,7 @@ function showResult(it) {
     it.style.display = 'none'
     setTimeout(function () {
         it.style.display = 'block'
-        hint.innerText = hintPrefix + it.id.toUpperCase()
+        hint.innerText =  it.info
         setTimeout(function () {
             it.style.display = 'none'
             setTimeout(function () {

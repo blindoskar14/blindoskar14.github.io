@@ -1,7 +1,6 @@
 intbox = document.getElementsByClassName('int-box')[0]
 getGun = document.getElementById('getGun')
 hint = document.getElementById('hint')
-hintPrefix = "You got "
 
 akm = document.getElementById('akm')
 uzi = document.getElementById('uzi')
@@ -15,6 +14,12 @@ uzi.prob = 15
 awm.prob = 0
 s1897.prob = 25
 m416.prob = 35
+
+s1897.info = "You got S1897!\n\n有效攻擊範圍：半徑 1.2 km\n\nShooting Distance: 1.2 km\n\n傷害：50%\n\nDamage: 50%\n\n*不能裝上配件\n\n*cannot use with scopes"
+uzi.info = "You got UZI!\n\n有效攻擊範圍：半徑 2.5 km\n\nDistance: 2.5 km\n\n傷害：10%\n\nDamage: 10%\n\n*不能裝上配件\n\n*cannot use with scopes"
+akm.info = "You got AKM!\n\n有效攻擊範圍：半徑 5 km\n\nDistance: 5 km\n\n傷害：20%\n\nDamage: 20%"
+m416.info = "You got M416!\n\n有效攻擊範圍：半徑 5 km\n\nDistance: 5 km\n\n傷害：25%\n\nDamage: 25%"
+awm.info = "You got AWM!\n\n有效攻擊範圍：半徑 20 km\n\nDistance: 20 km\n\n傷害：50%\n\nDamage: 50%"
 
 getGun.onclick = function () {
     getGun.style.display = 'none'
@@ -54,7 +59,7 @@ function showResult(it) {
     it.style.display = 'none'
     setTimeout(function () {
         it.style.display = 'block'
-        hint.innerText = hintPrefix + it.id.toUpperCase()
+        hint.innerText = it.info
         setTimeout(function () {
             it.style.display = 'none'
             setTimeout(function () {
